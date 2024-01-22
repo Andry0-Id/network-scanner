@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+import subprocess
+
+for ping in range(1,10):
+	# Example address : localhost
+	address = "127.0.0."+ str(ping)
+	# command ping
+	res = subprocess.call(['ping', '-c', '3',address])
+	if res == 0:
+		print(address)
+	elif res == 2:
+		print(address,"NO")
+	else:
+		print(address,"Failed")
